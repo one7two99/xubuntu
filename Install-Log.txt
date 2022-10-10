@@ -1,5 +1,8 @@
 Install-Log
 ===========
+
+Notes for using Xubuntu 22.04 as enterprise grade office environment
+
 ```
 # Systemupdates
 sudo apt update
