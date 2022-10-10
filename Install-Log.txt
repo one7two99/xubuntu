@@ -94,11 +94,17 @@ sudo apt install bluez obex-data-server
 # Cisco Secure Endpoint -> funktioniert nicht
 # Download Connector from the secure endpoint dashboard
 sudo dpkg -i <DOWNLOADEDINSTALLER>.deb
+sudo apt update
+sudo apt upgrade
+sudo apt --fix-broken install
 /opt/cisco/amp/bin/ampcli definitions
 /opt/cisco/amp/bin/ampcli defupdate
 /opt/cisco/amp/bin/ampcli sync
 /opt/cisco/amp/bin/ampcli scan full
 /opt/cisco/amp/bin/ampcli status
+sudo systemctl status cisco-amp.service 
+sudo systemctl status cisco-ampupdater.service 
+sudo systemctl status cisco-ampmon.service 
 
 # Mounting Corporate CIFS Shares
 # Link: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/mounting_an_smb_share
