@@ -1,0 +1,108 @@
+Install-Log
+===========
+
+# Systemupdates
+sudo apt update
+sudo apt upgrade
+sudo apt full-upgrade
+
+# Install Tools
+sudo apt install borgbackup restic git mlocate mc gparted links
+sudo apt install emacs org-mode org-mode-doc
+# for certutil
+sudo apt install libnss3-tools
+
+# Add normal user to sudo
+sudo usermod -aG sudo <USERNAME>
+
+# Install power management tools
+sudo apt install powertop tlp
+sudo systemctl enable tlp.service
+sudo systemctl start tlp.service
+recommended: cpufrequtils laptop-mode-tools tp-smapi-dkms acpi-call-dkms smartmontools linux-tools-generic | linux-tools
+
+# Install Thunderbird
+sudo snap install thunderbird
+Install Plugin: Own/Eule Plugin
+Install Plugin: Hide Local Folders
+
+# Install Notepad++
+sudo snap install notepad-plus-plus
+
+# Install Cisco WebEx
+wget https://binaries.webex.com/WebexDesktop-Ubuntu-Official-Package/Webex.deb
+sudo apt install ./Webex.deb 
+
+# Install VMware Horizon View
+wget https://download3.vmware.com/software/CART23FQ2_LIN64_2206/VMware-Horizon-Client-2206-8.6.0-20094634.x64.bundle
+chmod +x VMware-Horizon-Client-2206-8.6.0-20094634.x64.bundle 
+sudo ./VMware-Horizon-Client-2206-8.6.0-20094634.x64.bundle 
+
+# Install Microsoft Teams and Slack
+sudo snap install teams slack 
+
+# Install Spotify
+sudo snap install spotify
+
+# Install Teamviewer
+wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+sudo apt install /home/raschdorff/teamviewer_amd64.deb 
+
+# Install Google Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i ./google-chrome-stable_current_amd64.deb
+sudo apt update
+sudo apt upgrade
+
+# Install Crossover Linux
+wget https://media.codeweavers.com/pub/crossover/cxlinux/demo/crossover_22.0.1-1.deb
+Link: https://www.codeweavers.com/support/wiki/linux/linuxtutorial/install#deb
+sudo apt install ./crossover*.deb
+
+# Install Office
+Get Office 365 32bit Online-Installer
+Launch installation from within Crossover, pointing to the Online-Installer.exe
+
+# Install certificate
+servername=EXAMPLE.COM
+echo -n | openssl s_client -connect $servername:443 -showcerts > $servername.crt
+# edit this file to only leave the CA part of the certficiate including the --BEGIN and --END
+nano $servername.crt
+sudo mkdir /usr/share/ca-certificates/$servername
+sudo cp $servername.crt /usr/share/ca-certificates/$servername/$servername.crt
+sudo chmod 755 /usr/share/ca-certificates/$servername
+sudo chmod 644 /usr/share/ca-certificates/$servername/$servername.crt 
+sudo nano /etc/ca-certificates.conf
+# add $servername/$servername.crt to the end of the file
+# use the real name her NOT the variable!
+sudo update-ca-certificates
+
+# Install Conky
+sudo apt install conky
+
+# Install Shutter (Screenshot Tool)
+sudo apt install shutter
+
+# Bluetooth
+# Link: https://wiki.ubuntuusers.de/Bluetooth/Blueman/
+sudo apt install blueman 
+sudo apt install bluez obex-data-server 
+
+# Cisco Secure Endpoint -> funktioniert nicht
+# Download Connector from the secure endpoint dashboard
+sudo dpkg -i <DOWNLOADEDINSTALLER>.deb
+/opt/cisco/amp/bin/ampcli definitions
+/opt/cisco/amp/bin/ampcli defupdate
+/opt/cisco/amp/bin/ampcli sync
+/opt/cisco/amp/bin/ampcli scan full
+/opt/cisco/amp/bin/ampcli status
+
+# Mounting Corporate CIFS Shares
+# Link: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/mounting_an_smb_share
+sudo apt install cifs-utils
+# mount share manually
+sudo mount -t cifs //<SERVER>/<SHARE> /mnt/<MOUNTPOINT> -o username=<USERNAME>,domain=<DOMAIN> 
+# for easier mounting
+sudo nano /etc/fstab
+# add the following line will allow a sudo user to mount the share, asking for the password
+//<SERVER>/<SHARE>  /mnt/<MOUNTPOINT> cifs user=<USERNAME>,domain=<DOMAIN>
