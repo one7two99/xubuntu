@@ -123,5 +123,46 @@ sudo apt install onboard
 
 # Putty SSH / Serial Console Terminal
 sudo apt install putty
+
+# Install FTP Server
+# https://blog.eldernode.com/install-ftp-and-tftp-server-on-ubuntu-22-04/
+sudo apt install vsftpd
+sudo service vsftpd status
+sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.bak
+---
+Type Listen = YES
+If you do not need IPv6, disable it:
+listen_ipv6=No
+You should not allow access to an anonymous user:
+anonymous_enable=NO
+The default setting is that the client can only download the file, so let it stay active:
+local_enable=YES
+write_enable=YES
+FTP operates at port 20:
+connect_from_port_20=YES
+The listening port can be changed:
+listen_port=XX
+---
+# Create new user
+sudo useradd –m ftpuser
+sudo passwd ftpuser
+
+
+# Install TFTP Server
+# https://blog.eldernode.com/install-ftp-and-tftp-server-on-ubuntu-22-04/
+
+sudo apt install tftpd-hpa
+sudo systemctl status tftpd-hpa
+sudo nano /etc/default/tftpd-hpa
+---
+TFTP_USERNAME="tftp"
+TFTP_DIRECTORY="/srv/tftp"
+TFTP_ADDRESS="69"elp
+TFTP_OPTIONS="--secure --create"
+---  
+mkdir -p /srv/tftp
+sudo chown tftp:tftp /srv/tftp
+sudo systemctl restart tftpd-hpa
+sudo systemctl status tftpd-hpa
 ```
 
