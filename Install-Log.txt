@@ -117,4 +117,11 @@ sudo mount -t cifs //<SERVER>/<SHARE> /mnt/<MOUNTPOINT> -o username=<USERNAME>,d
 sudo nano /etc/fstab
 # add the following line will allow a sudo user to mount the share, asking for the password
 //<SERVER>/<SHARE>  /mnt/<MOUNTPOINT> cifs user=<USERNAME>,domain=<DOMAIN>
+
+# Onscreen Keyboard
+sudo apt install onboard
+
+# Putty SSH / Serial Console Terminal
+sudo apt install putty
 ```
+
