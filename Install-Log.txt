@@ -147,10 +147,8 @@ listen_port=XX
 sudo useradd –m ftpuser
 sudo passwd ftpuser
 
-
 # Install TFTP Server
 # https://blog.eldernode.com/install-ftp-and-tftp-server-on-ubuntu-22-04/
-
 sudo apt install tftpd-hpa
 sudo systemctl status tftpd-hpa
 sudo nano /etc/default/tftpd-hpa
@@ -164,5 +162,10 @@ mkdir -p /srv/tftp
 sudo chown tftp:tftp /srv/tftp
 sudo systemctl restart tftpd-hpa
 sudo systemctl status tftpd-hpa
+
+# Install Cisco Packet Tracer
+# Download from https://skillsforall.com/resources/lab-downloads
+sudo apt install ./Cisco_Packet_Tracer_820_Ubuntu_64bit_696ae64b25.deb
+
 ```
 
