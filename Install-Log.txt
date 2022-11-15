@@ -167,5 +167,8 @@ sudo systemctl status tftpd-hpa
 # Download from https://skillsforall.com/resources/lab-downloads
 sudo apt install ./Cisco_Packet_Tracer_820_Ubuntu_64bit_696ae64b25.deb
 
+# Install curl & Filezilla
+sudo apt install filezilla curl
+
 ```
 
