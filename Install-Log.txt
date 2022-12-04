@@ -170,5 +170,11 @@ sudo apt install ./Cisco_Packet_Tracer_820_Ubuntu_64bit_696ae64b25.deb
 # Install curl & Filezilla
 sudo apt install filezilla curl
 
+# Install AnyConnect
+Download installer from VPN webinterface
+chmod +x anyconnect-linux64-4.9.06037-core-vpn-webdeploy-k9.sh 
+sudo ./anyconnect-linux64-4.9.06037-core-vpn-webdeploy-k9.sh 
+
+
 ```
 
