@@ -50,8 +50,8 @@ sudo snap install spotify
 # Install Teamviewer
 wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 sudo apt install /home/raschdorff/teamviewer_amd64.deb 
-sudo systemctl disable teamviewerd.service 
-sudo systemctl stop teamviewerd.service 
+sudo systemctl enable teamviewerd.service
+sudo systemctl start teamviewerd.service 
 
 # Install Google Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -175,6 +175,12 @@ Download installer from VPN webinterface
 chmod +x anyconnect-linux64-4.9.06037-core-vpn-webdeploy-k9.sh 
 sudo ./anyconnect-linux64-4.9.06037-core-vpn-webdeploy-k9.sh 
 
+# Install KVM
+# Link: https://wiki.ubuntuusers.de/KVM/
+# Link: https://ubuntu.com/server/docs/virtualization-libvirt
+sudo apt  install qemu-kvm virt-manager
+
+# Windows 10 in KVM
+https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Building-the-drivers-using-Windows-11-21H2-EWDK
 
 ```
-
