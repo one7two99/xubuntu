@@ -167,6 +167,10 @@ mkdir -p /srv/tftp
 sudo chown tftp:tftp /srv/tftp
 sudo systemctl restart tftpd-hpa
 sudo systemctl status tftpd-hpa
+sudo systemctl stop tftpd-hpa
+sudo systemctl disable tftpd-hpa
+sudo systemctl status tftpd-hpa
+
 
 # Install Cisco Packet Tracer
 # Download from https://skillsforall.com/resources/lab-downloads
