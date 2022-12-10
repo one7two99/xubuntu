@@ -204,4 +204,10 @@ sudo systemctl stop cups
 sudo systemctl disable cups
 sudo systemctl status cups
 
+
+# Connect to Wifi via CLI
+# Link: ttps://askubuntu.com/questions/461825/how-to-connect-to-wifi-from-the-command-line
+nmcli device wifi list
+sudo nmcli device wifi  connect "<SSID NAME> --ask
+nmcli connection show|up|down "<SSID NAME>"
 ```
