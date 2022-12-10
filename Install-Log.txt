@@ -52,6 +52,10 @@ wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 sudo apt install /home/raschdorff/teamviewer_amd64.deb 
 sudo systemctl enable teamviewerd.service
 sudo systemctl start teamviewerd.service 
+sudo systemctl status teamviewerd.service 
+sudo systemctl stop teamviewerd.service 
+sudo systemctl disable teamviewerd.service 
+sudo systemctl status teamviewerd.service 
 
 # Install Google Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
