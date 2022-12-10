@@ -221,4 +221,11 @@ sudo apt install net-tools
 # show all open ports/connections
 watch -n 5 "netstat -upant"
 
+# Disable IPv6
+# Link: https://linuxconfig.org/how-to-disable-ipv6-address-on-ubuntu-22-04-lts-jammy-jellyfish
+sudo nano /etc/default/grub
+# change the following line
+GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1"
+# update GRUB
+sudo update-grub
 ```
