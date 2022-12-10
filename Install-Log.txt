@@ -11,7 +11,7 @@ sudo apt full-upgrade
 
 # Install Tools
 sudo apt install borgbackup restic git mlocate mc gparted links
-sudo apt install emacs org-mode org-mode-doc
+sudo apt install emacs org-mode org-mode-doc 
 # for certutil
 sudo apt install libnss3-tools
 
@@ -204,10 +204,21 @@ sudo systemctl stop cups
 sudo systemctl disable cups
 sudo systemctl status cups
 
-
 # Connect to Wifi via CLI
 # Link: ttps://askubuntu.com/questions/461825/how-to-connect-to-wifi-from-the-command-line
 nmcli device wifi list
 sudo nmcli device wifi  connect "<SSID NAME> --ask
 nmcli connection show|up|down "<SSID NAME>"
+
+# Disable avahi-daemon (zeroconf / bonjour)
+# Link: https://wiki.ubuntuusers.de/Avahi/
+sudo systemctl stop avahi-daemon.socket avahi-daemon.service 
+sudo systemctl disable avahi-daemon.socket avahi-daemon.service 
+sudo systemctl status avahi-daemon.socket avahi-daemon.service 
+
+# Net Utilities
+sudo apt install net-tools
+# show all open ports/connections
+watch -n 5 "netstat -upant"
+
 ```
