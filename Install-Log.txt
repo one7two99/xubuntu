@@ -191,5 +191,9 @@ https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Building-the-driver
 # RDP access to windows
 sudo apt install remmina
 
+# Disable CUPS Printing Services
+sudo systemctl stop cups
+sudo systemctl disable cups
+sudo systemctl status cups
 
 ```
