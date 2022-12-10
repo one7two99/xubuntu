@@ -183,4 +183,8 @@ sudo apt  install qemu-kvm virt-manager
 # Windows 10 in KVM
 https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Building-the-drivers-using-Windows-11-21H2-EWDK
 
+# RDP access to windows
+sudo apt install remmina
+
+
 ```
