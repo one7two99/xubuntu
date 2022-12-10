@@ -143,6 +143,11 @@ connect_from_port_20=YES
 The listening port can be changed:
 listen_port=XX
 ---
+#Disable FTP Server, if you don't need it:
+systemctl stop vsftpd
+systemctl disable vsftpd
+systemctl status vsftpd
+
 # Create new user
 sudo useradd –m ftpuser
 sudo passwd ftpuser
