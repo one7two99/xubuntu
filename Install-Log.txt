@@ -232,4 +232,27 @@ sudo nano /etc/default/grub
 GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1"
 # update GRUB
 sudo update-grub
+
+# Install OneDrive
+# Links
+# - https://wiki.ubuntuusers.de/OneDrive/
+# - https://github.com/skilion/onedrive
+# Prequisites
+sudo apt install git libcurl4-openssl-dev libsqlite3-dev
+sudo snap install --classic dmd
+# Installation
+git clone https://github.com/skilion/onedrive.git
+cd onedrive
+make
+sudo make install
+# Configuration files
+mkdir -p ~/.config/onedrive
+cp ./config ~/.config/onedrive/config
+nano ~/.config/onedrive/config
+# Enable onedrive service
+systemctl --user enable onedrive
+systemctl --user start onedrive
+# To see the logs run:
+journalctl --user-unit onedrive -f
+
 ```
