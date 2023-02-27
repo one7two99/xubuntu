@@ -255,4 +255,14 @@ systemctl --user start onedrive
 # To see the logs run:
 journalctl --user-unit onedrive -f
 
+# Installation Joplin
+# Link: https://github.com/laurent22/joplin
+git clone https://github.com/laurent22/joplin.git
+cd joplin/
+./Joplin_install_and_update.sh 
+
+# Installation nmap, bmon, htop, iptraf
+sudo apt install nmap bmon htop iptraf
+
+
 ```
