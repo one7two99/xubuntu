@@ -264,5 +264,44 @@ cd joplin/
 # Installation nmap, bmon, htop, iptraf
 sudo apt install nmap bmon htop iptraf
 
+# Installation Remote Desktop Manager (RDM)
+# Dowload from website
+sudo dpkg -i RemoteDesktopManager_2022.3.1.3_amd64.deb 
+sudo apt upgrade --fix-missing
+
+# OpenConnect VPN
+sudo nano /usr/share/vpnc-scripts/vpnc-script
+sudo apt  install zenity ocproxy pass openconnect
+
+
+# Fix Ubuntu Sources
+# Ubuntu 22.04 Sources, see: https://wiki.ubuntuusers.de/sources.list/
+-----[ BEGIN /etc/apt/sources.list ]-----
+#### Main - Officially supported software.
+deb http://de.archive.ubuntu.com/ubuntu jammy main
+deb http://de.archive.ubuntu.com/ubuntu jammy-updates main
+deb http://de.archive.ubuntu.com/ubuntu jammy-security main
+# deb http://de.archive.ubuntu.com/ubuntu jammy-backports main 
+
+#### Restricted - Supported software that is not available under a completely free license.
+deb http://de.archive.ubuntu.com/ubuntu jammy restricted 
+deb http://de.archive.ubuntu.com/ubuntu jammy-updates restricted 
+deb http://de.archive.ubuntu.com/ubuntu jammy-security restricted 
+# deb http://de.archive.ubuntu.com/ubuntu jammy-backports restricted 
+
+#### Universe - Community maintained software, i.e. not officially supported software.
+deb http://de.archive.ubuntu.com/ubuntu jammy universe
+deb http://de.archive.ubuntu.com/ubuntu jammy-updates universe
+deb http://de.archive.ubuntu.com/ubuntu jammy-security universe
+#deb http://de.archive.ubuntu.com/ubuntu jammy-backports universe
+
+#### Multiverse - Software that is not free / UNSUPPORTED by the Ubuntu Team
+deb http://de.archive.ubuntu.com/ubuntu jammy multiverse
+deb http://de.archive.ubuntu.com/ubuntu jammy-updates multiverse
+deb http://de.archive.ubuntu.com/ubuntu jammy-security multiverse
+# deb http://de.archive.ubuntu.com/ubuntu jammy-backports multiverse
+-----[ END /etc/apt/sources.list ]-----
+
+
 
 ```
