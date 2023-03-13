@@ -302,6 +302,10 @@ deb http://de.archive.ubuntu.com/ubuntu jammy-security multiverse
 # deb http://de.archive.ubuntu.com/ubuntu jammy-backports multiverse
 -----[ END /etc/apt/sources.list ]-----
 
-
+# Exchange via Davmail
+# Link: https://davmail.sourceforge.net/download.html
+sudo apt install davmail
+# Launch the davmail GUI to configure davmail
+# For SSL Setup: https://davmail.sourceforge.net/sslsetup.html
 
 ```
