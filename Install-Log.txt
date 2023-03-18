@@ -309,6 +309,11 @@ sudo apt install davmail
 # For SSL Setup: https://davmail.sourceforge.net/sslsetup.html
 
 # Install solaar für Logitech Unify Configuration
+# removed / just tested
 sudo install solaar
+
+# BitTorrent Client
+sudo apt install qbittorrent
+
 
 ```
