@@ -308,4 +308,7 @@ sudo apt install davmail
 # Launch the davmail GUI to configure davmail
 # For SSL Setup: https://davmail.sourceforge.net/sslsetup.html
 
+# Install solaar für Logitech Unify Configuration
+sudo install solaar
+
 ```
