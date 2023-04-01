@@ -315,5 +315,28 @@ sudo install solaar
 # BitTorrent Client
 sudo apt install qbittorrent
 
+#### Enable 2FA for SHH Login
+# See also: 
+# https://ubuntu.com/tutorials/configure-ssh-2fa#3-configuring-authentication
+sudo apt install openssh-server
+sudo apt install libpam-google-authenticator
+sudo nano /etc/pam.d/sshd
+# add a line: auth required pam_google_authenticator.so
+sudo nano /etc/ssh/sshd_config
+# Change to yes to enable challenge-response passwords (beware issues with
+# some PAM modules and threads)
+ChallengeResponseAuthentication no # CHANGE THIS TO YES
+# or if this option is not present, check for:
+KbdInteractiveAuthentication yes
+# Change to no to disable tunnelled clear text passwords
+#PasswordAuthentication yes
+sudo systemctl restart sshd.service
+google-authenticator
+# Make tokens “time-base””: yes
+# Update the .google_authenticator file: yes
+# Disallow multiple uses: yes
+# Increase the original generation time limit: no
+# Enable rate-limiting: yes
+ssh localhost
 
 ```
