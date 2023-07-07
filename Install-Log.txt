@@ -360,6 +360,8 @@ sudo apt update
 sudo apt install ffmpeg obs-studio
 
 # Evolution Email Client with Exchange Onlien / Office 365
+# https://ucdavisit.service-now.com/servicehub/?id=ucd_kb_article&sys_id=9b84e53edbca4c1442aac3af2996193c
+# https://wiki.gnome.org/Apps/Evolution/EWS/OAuth2#Configure_the_account_in_Evolution
 sudo apt-get install evolution evolution-ews
 # 1. Server-Type: Exchange-Webdienste
 # 2. Host address: https://outlook.office365.com/EWS/Exchange.asmx hinterlegen.
