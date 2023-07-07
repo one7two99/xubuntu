@@ -12,6 +12,7 @@ sudo apt full-upgrade
 # Install Tools
 sudo apt install borgbackup restic git mlocate mc gparted links
 sudo apt install emacs org-mode org-mode-doc 
+sudo apt install usb-creator-gtk
 # for certutil
 sudo apt install libnss3-tools
 
