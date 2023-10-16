@@ -367,4 +367,14 @@ sudo apt-get install evolution evolution-ews
 # 1. Server-Type: Exchange-Webdienste
 # 2. Host address: https://outlook.office365.com/EWS/Exchange.asmx hinterlegen.
 # 3. Legitimation: OAuth2 (Office 365)
+
+Application ID:
+Microsoft Azure > Manage > App Registration > All Applications
+https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps
+or use a default application ID for 
+https://wiki.gnome.org/Apps/Evolution/EWS/OAuth2#Available_application_ID
+
+Tenant ID:
+Microsoft Azure > Overview
+https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview
 ```
