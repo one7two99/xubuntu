@@ -47,7 +47,7 @@ sudo snap install spotify
 
 # Install Teamviewer
 wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
-sudo apt install /home/raschdorff/teamviewer_amd64.deb 
+sudo apt install ./teamviewer_amd64.deb 
 sudo systemctl enable teamviewerd.service
 sudo systemctl start teamviewerd.service 
 sudo systemctl status teamviewerd.service 
